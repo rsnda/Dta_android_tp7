@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_true"
@@ -29,12 +29,13 @@
         android:layout_marginBottom="49dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="button1"
         android:text="@string/button_false"
-        android:layout_marginStart="51dp"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignParentStart="true" />
+        android:layout_marginStart="53dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/button2" />
 
 </RelativeLayout>
