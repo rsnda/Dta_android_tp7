@@ -1,9 +1,16 @@
 package com.example.admin.dta_android_tp7;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class ActivityPage3 extends AppCompatActivity {
+
+    int n = 0;
 
     private VraiFaux[] questions = new VraiFaux[]{
             new VraiFaux("Il n’y a pas de faute dans : « Les arborigènes du Canada ont toujours eu un respect sacré pour les arbres. »", false),
@@ -22,5 +29,32 @@ public class ActivityPage3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page3);
+
+        Intent intent = getIntent();
+        boolean reponse_precedente = intent.getBooleanExtra("answer", false);
+        n = intent.getIntExtra("int", 0);
+        //Log.d("n = ",n);
+        TextView editText = ((TextView) findViewById(R.id.textView4));
+        editText.setText(questions[0].getQuestion());
+        Button bouton2 = (Button) findViewById(R.id.button_false);
+        bouton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("BOUTTON", "Bouton 2");
+                Intent intent = new Intent(ActivityPage3.this, ActivityPage3.class);
+                intent.putExtra("answer", questions[n].isReponse());
+                intent.putExtra("int", n + 1);
+                startActivity(intent);
+            }
+
+        });
+    }
+
+    public void button_true(View view) {
+        Log.d("BUTTON", "Bouton 1");
+        Intent intent = new Intent(ActivityPage3.this, ActivityPage3.class);
+        intent.putExtra("answer", questions[n].isReponse());
+        intent.putExtra("int", n + 1);
+        startActivity(intent);
     }
 }
