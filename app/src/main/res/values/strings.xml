@@ -10,4 +10,6 @@
     <string name="question2">La première cérémonie des Oscar a eu lieu au Carnegie Hall de New York.</string>
     <string name="button_false2">Faux</string>
     <string name="button_true2">Vrai</string>
+    <string name="vrai">Vrai</string>
+    <string name="faux">Faux</string>
 </resources>

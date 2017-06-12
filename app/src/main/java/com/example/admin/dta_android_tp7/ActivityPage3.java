@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ActivityPage3 extends AppCompatActivity {
 
-    int n = 0;
+    int n;
 
     private VraiFaux[] questions = new VraiFaux[]{
             new VraiFaux("Il n’y a pas de faute dans : « Les arborigènes du Canada ont toujours eu un respect sacré pour les arbres. »", false),
@@ -33,17 +33,23 @@ public class ActivityPage3 extends AppCompatActivity {
         Intent intent = getIntent();
         boolean reponse_precedente = intent.getBooleanExtra("answer", false);
         n = intent.getIntExtra("int", 0);
-        //Log.d("n = ",n);
+
+        Log.d("NUMERO", "N = " + n);
         TextView editText = ((TextView) findViewById(R.id.textView4));
-        editText.setText(questions[0].getQuestion());
+        editText.setText(questions[n].getQuestion());
         Button bouton2 = (Button) findViewById(R.id.button_false);
         bouton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("BOUTTON", "Bouton 2");
                 Intent intent = new Intent(ActivityPage3.this, ActivityPage3.class);
-                intent.putExtra("answer", questions[n].isReponse());
+
                 intent.putExtra("int", n + 1);
+                if (questions[n].isReponse() == false){
+                    intent.putExtra("answer", true);
+                }else {
+                    intent.putExtra("answer", false);
+                }
                 startActivity(intent);
             }
 
@@ -53,8 +59,14 @@ public class ActivityPage3 extends AppCompatActivity {
     public void button_true(View view) {
         Log.d("BUTTON", "Bouton 1");
         Intent intent = new Intent(ActivityPage3.this, ActivityPage3.class);
-        intent.putExtra("answer", questions[n].isReponse());
         intent.putExtra("int", n + 1);
+
+        if (questions[n].isReponse() == true){
+            intent.putExtra("answer", true);
+        }else {
+            intent.putExtra("answer", false);
+        }
+
         startActivity(intent);
     }
 }
