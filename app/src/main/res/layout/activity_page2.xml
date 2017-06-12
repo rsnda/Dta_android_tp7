@@ -10,7 +10,37 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/wrond_answer"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="85dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/wrond_answer" />
+        android:text="@string/question2" />
+
+    <Button
+        android:id="@+id/button_false2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:text="@string/button_false2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="78dp" />
+
+    <Button
+        android:id="@+id/button_true2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="62dp"
+        android:text="@string/button_true2"
+        android:onClick="button_true2"
+        android:layout_alignBaseline="@+id/button_false2"
+        android:layout_alignBottom="@+id/button_false2"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

@@ -5,4 +5,9 @@
     <string name="question1">En 2016, en remportant un Oscar à l’âge de 87 ans, Ennio Morricone est devenu le gagnant le plus âgé de l’histoire de cet événement.</string>
     <string name="title_activity_page2">ActivityPage2</string>
     <string name="wrond_answer">La réponse est VRAI. En 2016, en remportant à l’âge de 87 ans l’Oscar de la meilleure musique de film pour The Hateful Eight (Les Huit Salopards) de Quentin Tarantino, Ennio Morricone est devenu le lauréat le plus âgé de l’histoire des Oscar. </string>
+    <string name="textButton2">"La réponse est VRAI. En 2016, en remportant à l’âge de 87 ans l’Oscar de la meilleure musique de film pour The Hateful Eight (Les Huit Salopards) de Quentin Tarantino, Ennio Morricone est devenu le lauréat le plus âgé de l’histoire des Oscar. "</string>
+    <string name="textButton1">"ERREUR = La réponse est VRAI. En 2016, en remportant à l’âge de 87 ans l’Oscar de la meilleure musique de film pour The Hateful Eight (Les Huit Salopards) de Quentin Tarantino, Ennio Morricone est devenu le lauréat le plus âgé de l’histoire des Oscar. \"</string>
+    <string name="question2">La première cérémonie des Oscar a eu lieu au Carnegie Hall de New York.</string>
+    <string name="button_false2">Faux</string>
+    <string name="button_true2">Vrai</string>
 </resources>

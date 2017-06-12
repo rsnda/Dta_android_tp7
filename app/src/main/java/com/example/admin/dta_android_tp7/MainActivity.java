@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d("BOUTTON", "Bouton 2");
                 Intent intent = new Intent(MainActivity.this, ActivityPage2.class);
-                intent.putExtra("param", "Je viens du bouton 2");
+                intent.putExtra("param", getString(R.string.textButton2));
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public void button1(View view) {
         Log.d("BUTTON", "Bouton 1");
         Intent intent = new Intent(MainActivity.this, ActivityPage2.class);
-        intent.putExtra("param", "Je viens du bouton 1");
+        intent.putExtra("param", getString(R.string.textButton1));
         startActivity(intent);
     }
 
