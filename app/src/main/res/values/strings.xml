@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Dta_android_tp7</string>
+    <string name="button_true">Faux</string>
+    <string name="button_false">Vrai</string>
+    <string name="question1">En 2016, en remportant un Oscar à l’âge de 87 ans, Ennio Morricone est devenu le gagnant le plus âgé de l’histoire de cet événement.</string>
 </resources>
