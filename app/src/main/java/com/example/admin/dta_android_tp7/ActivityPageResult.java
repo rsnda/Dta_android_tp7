@@ -12,10 +12,11 @@ public class ActivityPageResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_result);
 
+        // Recupere l'intent qui a lancer l'activity ainsi que le résultat
         Intent intent = getIntent();
         int result = intent.getIntExtra("result", 0);
 
-
+        // Affiche le résultat dans une textWiew
         TextView editText = ((TextView) findViewById(R.id.twResult));
         editText.setText("Votre résultat est de " + result + "/10 !");
     }

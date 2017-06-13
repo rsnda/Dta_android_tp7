@@ -31,6 +31,7 @@ public class ActivityPage3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page3);
 
+        // Recupere l'intent qui a lancer l'activity ainsi que le resultat actuelle est le nombre de question
         Intent intent = getIntent();
         n = intent.getIntExtra("int", 0);
         res = intent.getIntExtra("res", 0);
@@ -39,16 +40,24 @@ public class ActivityPage3 extends AppCompatActivity {
         Log.d("NUMERO", "res = " + res);
 
 
+        // Affiche la question dans une tewt view
         TextView editText = ((TextView) findViewById(R.id.textView4));
         editText.setText(questions[n].getQuestion());
+
+
         Button bouton2 = (Button) findViewById(R.id.button_false);
 
         bouton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
+                * On écoute le bouton faux, si la reponse est juste, on augemente le resultat,
+                * sinon on le laisse tel quel
+                 */
                 Log.d("BOUTTON", "Bouton 2");
 
                 if(n == 9){
+                    // si la derniere question a été posé, on lance l'activité de resultat
                     Log.d("BOUTTON", "Bouton 2 IF");
                     Intent intent = new Intent(ActivityPage3.this, ActivityPageResult.class);
                     intent.putExtra("result", res);
@@ -71,9 +80,14 @@ public class ActivityPage3 extends AppCompatActivity {
     }
 
     public void button_true(View view) {
+        /*
+                * On écoute le bouton vrai, si la reponse est juste, on augemente le resultat,
+                * sinon on le laisse tel quel
+                 */
         Log.d("BUTTON", "Bouton 1");
 
         if(n == 9){
+            // si la derniere question a été posé, on lance l'activité de resultat
             Log.d("BOUTTON", "Bouton 1 IF");
             Intent intent = new Intent(ActivityPage3.this, ActivityPageResult.class);
             intent.putExtra("result", res);

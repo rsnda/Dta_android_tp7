@@ -1,7 +1,8 @@
 package com.example.admin.dta_android_tp7;
 
 /**
- * Created by admin on 12/06/2017.
+ * Created by Erjon on 12/06/2017.
+ * Class containing a question and a True/False answer
  */
 
 public class VraiFaux {
