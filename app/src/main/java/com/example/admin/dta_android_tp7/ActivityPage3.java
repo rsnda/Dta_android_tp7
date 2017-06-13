@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class ActivityPage3 extends AppCompatActivity {
 
     int n;
+    int res;
 
     private VraiFaux[] questions = new VraiFaux[]{
             new VraiFaux("Il n’y a pas de faute dans : « Les arborigènes du Canada ont toujours eu un respect sacré pour les arbres. »", false),
@@ -31,24 +32,37 @@ public class ActivityPage3 extends AppCompatActivity {
         setContentView(R.layout.activity_page3);
 
         Intent intent = getIntent();
-        boolean reponse_precedente = intent.getBooleanExtra("answer", false);
         n = intent.getIntExtra("int", 0);
+        res = intent.getIntExtra("res", 0);
 
         Log.d("NUMERO", "N = " + n);
+        Log.d("NUMERO", "res = " + res);
+
+
         TextView editText = ((TextView) findViewById(R.id.textView4));
         editText.setText(questions[n].getQuestion());
         Button bouton2 = (Button) findViewById(R.id.button_false);
+
         bouton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("BOUTTON", "Bouton 2");
+
+                if(n == 9){
+                    Log.d("BOUTTON", "Bouton 2 IF");
+                    Intent intent = new Intent(ActivityPage3.this, ActivityPageResult.class);
+                    intent.putExtra("result", res);
+                    startActivity(intent);
+                    return;
+                }
+
                 Intent intent = new Intent(ActivityPage3.this, ActivityPage3.class);
 
                 intent.putExtra("int", n + 1);
-                if (questions[n].isReponse() == false){
-                    intent.putExtra("answer", true);
+                if (!questions[n].isReponse()){
+                    intent.putExtra("res", res + 1);
                 }else {
-                    intent.putExtra("answer", false);
+                    intent.putExtra("res", res);
                 }
                 startActivity(intent);
             }
@@ -58,13 +72,22 @@ public class ActivityPage3 extends AppCompatActivity {
 
     public void button_true(View view) {
         Log.d("BUTTON", "Bouton 1");
+
+        if(n == 9){
+            Log.d("BOUTTON", "Bouton 1 IF");
+            Intent intent = new Intent(ActivityPage3.this, ActivityPageResult.class);
+            intent.putExtra("result", res);
+            startActivity(intent);
+            return;
+        }
+
         Intent intent = new Intent(ActivityPage3.this, ActivityPage3.class);
         intent.putExtra("int", n + 1);
 
-        if (questions[n].isReponse() == true){
-            intent.putExtra("answer", true);
+        if (questions[n].isReponse()){
+            intent.putExtra("res", res + 1);
         }else {
-            intent.putExtra("answer", false);
+            intent.putExtra("res", res);
         }
 
         startActivity(intent);
